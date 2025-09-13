@@ -43,6 +43,7 @@ const parenth = document.getElementById("parenthese");
 parenth.addEventListener("click", function () {
   if (openParenthe) {
     affichage.textContent += "(";
+    openParenthe = false;
   } else {
     affichage.textContent += ")";
     openParenthe = true;
