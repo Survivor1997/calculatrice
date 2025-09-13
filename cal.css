@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  margin: 0;
+}
+#ecran {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 80px;
+  border: 1px solid #000;
+}
+
+.alignement {
+  display: flex;
+  flex: 3;
+  padding: 5px;
+  gap: 5px;
+}
+.chiffres {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  padding: 2px;
+}
+.operation {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 2px;
+}
+.operation button,
+.chiffres button {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  background: grey;
+}
