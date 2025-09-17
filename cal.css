@@ -3,6 +3,7 @@ body {
   height: 100vh;
   flex-direction: column;
   margin: 0;
+  background-color: #000;
 }
 #ecran {
   flex: 1;
@@ -11,19 +12,27 @@ body {
   align-items: center;
   font-size: 80px;
   border: 1px solid #000;
+  color: white;
+  font-family: Arial, sans-serif;
 }
 
 .alignement {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   flex: 3;
-  padding: 5px;
-  gap: 5px;
+}
+.enfant2 {
+  display: flex;
+  flex: 3;
+  justify-content: space-between;
+  width: 100%;
 }
 .chiffres {
   flex: 3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
+  gap: 5px;
   padding: 2px;
 }
 .operation {
@@ -41,5 +50,36 @@ body {
   border: none;
   border-radius: 8px;
   font-size: 1.2rem;
-  background: grey;
+  background: black;
+  color: white;
+}
+button:hover {
+  background-color: darkgray;
+  cursor: pointer;
+  transition: background 0.9s ease;
+}
+
+button:active {
+  background-color: darkgray;
+  transform: scale(0.8);
+}
+.enfant1 {
+  width: 100%;
+}
+.fonctions {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 100%;
+}
+
+.fonctions button {
+  flex: 1;
+  margin: 2px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  background: black;
+  min-width: 0;
+  color: white;
 }

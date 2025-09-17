@@ -1,13 +1,14 @@
 const affichage = document.querySelector("#ecran");
 const boutons = document.querySelectorAll(
-  ".chiffres button:not(#parenthese,#pourcent,#effacerLeDernier,#effacerTout)"
+  ".chiffres button:not(#parenthese,#pourcent,#effacerLeDernier,#effacerTout,#egal"
 );
 for (let i = 0; i < boutons.length; i++) {
   boutons[i].addEventListener("click", function () {
     affichage.textContent += boutons[i].textContent;
   });
 }
-const operation = document.querySelectorAll(".operation button:not(#egal)");
+const operation = document.querySelectorAll(".operation button");
+console.log(operation);
 for (let i = 0; i < operation.length; i++) {
   operation[i].addEventListener("click", function () {
     affichage.textContent += operation[i].textContent;
@@ -16,7 +17,7 @@ for (let i = 0; i < operation.length; i++) {
 const reponse = document.getElementById("egal");
 reponse.addEventListener("click", function () {
   let expression = affichage.textContent;
-  console.log("Expression :", JSON.stringify(expression));
+  /* console.log("Expression :", JSON.stringify(expression));*/
   if (expression === "") return;
   try {
     let resultat = eval(expression);
@@ -49,3 +50,19 @@ parenth.addEventListener("click", function () {
     openParenthe = true;
   }
 });
+/*let effacerLeDernierCarac = document.getElementById("effacerLeDernierCar");
+console.log(effacerLeDernierCarac.textContent);
+effacerLeDernierCarac.addEventListener("click", function () {
+  let expression = affichage.textContent;
+  let dernierOperateur = Math.max(
+    expression.lastIndexOf("+"),
+    expression.lastIndexOf("-"),
+    expression.lastIndexOf("*"),
+    expression.lastIndexOf("/")
+  );
+  if (dernierOperateur === -1) {
+    affichage.textContent = "";
+  } else {
+    affichage.textContent = expression.slice(0, dernierOperateur + 1);
+  }
+});*/
